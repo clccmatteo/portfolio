@@ -112,14 +112,14 @@ const HomePage = async ({ params }) => {
           </p>
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 mb-8">
             <a
-              href="https://www.linkedin.com/in/matteocolucci/"
+              href="https://www.linkedin.com/in/clccmatteo/"
               className="flex items-center space-x-4 p-4 bg-white border rounded-lg shadow-md hover:shadow-lg transition-transform duration-200"
             >
               <FaLinkedin className="text-blue-600 text-4xl" />
               <span className="text-gray-700 text-lg">{t("linkedin")}</span>
             </a>
             <a
-              href="https://github.com/clccmatteo"
+              href="https://x.com/clccmatteo"
               className="flex items-center space-x-4 p-4 bg-white border rounded-lg shadow-md hover:shadow-lg transition-transform duration-200"
             >
               <FaXTwitter className="text-black text-4xl" />
