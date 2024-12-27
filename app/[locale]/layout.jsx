@@ -1,9 +1,11 @@
 import "./globals.css";
 import Header from "../../components/header";
+import Script from "next/script";
 
 const Layout = async ({ children, params }) => {
   const resolvedParams = await params;
   const { locale } = resolvedParams;
+
   return (
     <html lang={locale}>
       <head>
@@ -19,6 +21,25 @@ const Layout = async ({ children, params }) => {
         <meta name="author" content="Matteo Colucci" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <link rel="icon" href="/profile.png" />
+        {/* Google Analytics Script */}
+        <Script
+          strategy="afterInteractive"
+          src={`https://www.googletagmanager.com/gtag/js?id=${process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS}`}
+        />
+        <Script
+          id="google-analytics"
+          strategy="afterInteractive"
+          dangerouslySetInnerHTML={{
+            __html: `
+              window.dataLayer = window.dataLayer || [];
+              function gtag(){dataLayer.push(arguments);}
+              gtag('js', new Date());
+              gtag('config', '${process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS}', {
+                page_path: window.location.pathname,
+              });
+            `,
+          }}
+        />
       </head>
       <body>
         <Header locale={locale} />
