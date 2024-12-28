@@ -11,6 +11,12 @@ import TranslationsProvider from "@/components/TranslationProvider";
 
 const i18nNamespaces = ["homepage", "ship12"];
 
+export const metadata = {
+  title: "Matteo Colucci - Web Developer",
+  description:
+    "Welcome to Matteo Colucci's portfolio. Explore my projects and skills.",
+};
+
 const HomePage = async ({ params }) => {
   const resolvedParams = await params;
   const { locale } = resolvedParams;

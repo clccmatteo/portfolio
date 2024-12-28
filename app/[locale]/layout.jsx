@@ -1,26 +1,19 @@
 import "./globals.css";
 import Header from "../../components/header";
 
+export const metadata = {
+  keywords: "Matteo Colucci, portfolio, web developer, projects, skills",
+  author: "Matteo Colucci",
+  viewport: "width=device-width, initial-scale=1.0",
+  icon: "/profile.png",
+};
+
 const Layout = async ({ children, params }) => {
   const resolvedParams = await params;
   const { locale } = resolvedParams;
 
   return (
     <html lang={locale}>
-      <head>
-        <title>Matteo Colucci Portfolio</title>
-        <meta
-          name="description"
-          content="Welcome to Matteo Colucci's portfolio. Explore my projects and skills."
-        />
-        <meta
-          name="keywords"
-          content="Matteo Colucci, portfolio, web developer, projects, skills"
-        />
-        <meta name="author" content="Matteo Colucci" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <link rel="icon" href="/profile.png" />
-      </head>
       {/* Google Analytics Script */}
       <script
         async

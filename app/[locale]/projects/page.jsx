@@ -7,6 +7,12 @@ import Image from "next/image";
 
 const i18nNamespaces = ["projects"];
 
+export const metadata = {
+  title: "Projects",
+  description:
+    "Explore Matteo Colucci's projects. Web development, mobile apps, and more.",
+};
+
 const ProjectsPage = async ({ params }) => {
   const resolvedParams = await params;
   const { locale } = resolvedParams;

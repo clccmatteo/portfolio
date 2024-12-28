@@ -7,6 +7,11 @@ import Link from "next/link";
 
 const i18nNamespaces = ["about"];
 
+export const metadata = {
+  title: "About Me",
+  description: "Learn more about Matteo Colucci. Education, skills, and more.",
+};
+
 const AboutPage = async ({ params }) => {
   const { locale } = await params;
   const { t, resources } = await initTranslations(locale, i18nNamespaces);
